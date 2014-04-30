@@ -1,7 +1,6 @@
-public class reverseStr2 {
+public class reverseStr {
 	public static void main(String[] args) {
-		String testsa[] = { "", " ", "       ", "a ", " a", "aa bd  cs" };
-		// String sa[] = { "  a b   c  d" };
+		String testsa[] = { "", " ", "       ", "a ", " a", " aa bd  cs " };
 		for (String tests : testsa) {
 			System.out.println(tests + "|" + reverseWords2(tests) + "|");
 		}
@@ -10,27 +9,21 @@ public class reverseStr2 {
 	public static String reverseWords2(String s) {
 		String[] sa;
 		String out = "";
-		if (s.isEmpty() | s.equals(" ")) {
-			return "";
+		sa = s.split(" ");
+		for (int i = 0; i < sa.length; i++) {
+			String word = sa[sa.length - 1 - i];
+			// exclude "" in splited array
+			if (!word.equals("")) {
+				//add space between two words
+				out += word + " ";
+			}
+		}
+		//exclude the last space and return when string is void
+		int n = out.length();
+		if (n > 0) {
+			return out.substring(0, out.length() - 1);
 		} else {
-			sa = s.split(" ");
-			for (int i = 0; i < sa.length; i++) {
-				String word = sa[sa.length - 1 - i];
-				if (word.equals(" ")) {
-					continue;
-				} else {
-					if (!word.equals("")) {
-						out += word + " ";
-					}
-				}
-			}
-			//exclude the last space
-			int n = out.length();
-			if (n > 0) {
-				return out.substring(0, out.length() - 1);
-			} else {
-				return "";
-			}
+			return "";
 		}
 	}
 
