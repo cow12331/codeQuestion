@@ -40,6 +40,8 @@ public class MaxPointOnOneLine {
 					continue;
 				}
 				//line with slope
+				//float +/- problem will not induce wrong answer becasue the point in the most edge
+				//however we can use add 0.0 to deal this problem
 				float k = (float)(p1.y - p2.y) / (float)(p1.x - p2.x);
 				if (slopes.containsKey(k)) {
 					slopes.put(k, slopes.get(k) + 1);
