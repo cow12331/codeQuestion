@@ -1,4 +1,4 @@
-public class reverseStr {
+public class ReverseStr {
 	public static void main(String[] args) {
 		String testsa[] = { "", " ", "       ", "a ", " a", " aa bd  cs " };
 		for (String tests : testsa) {
