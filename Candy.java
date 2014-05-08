@@ -1,5 +1,5 @@
 
-public class CandyBetter {
+public class Candy {
 
 	/**
 	 * @param args
