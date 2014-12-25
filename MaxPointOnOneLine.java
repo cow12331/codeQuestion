@@ -4,7 +4,7 @@ public class MaxPointOnOneLine {
 
 	public static void main(String[] args) {
 		Point[][] pointss = {
-				{ new Point(0, 0), new Point(0, 1),new Point(0, 0), new Point(0, 1) },
+				{ new Point(0, 0), new Point(-1, 0),new Point(1, 0)},
 				{ new Point(0, 0), new Point(1, 1),new Point(1, 1), new Point(1, -1), new Point(1, -1) },
 				{ new Point(0, 0),new Point(0, 0) },
 				{ new Point(84, 250), new Point(0, 0), new Point(1, 0),
@@ -14,6 +14,8 @@ public class MaxPointOnOneLine {
 		for (Point[] i : pointss) {
 			System.out.println(maxPoints(i));
 		}
+		System.out.println(0.0+(float)0/-1 );
+		System.out.println(0.0+(float)0/1 );
 	}
 
 	public static int maxPoints(Point[] points) {
@@ -40,8 +42,6 @@ public class MaxPointOnOneLine {
 					continue;
 				}
 				//line with slope
-				//float +/- problem will not induce wrong answer becasue the point in the most edge
-				//however we can use add 0.0 to deal this problem
 				float k = (float)(p1.y - p2.y) / (float)(p1.x - p2.x);
 				if (slopes.containsKey(k)) {
 					slopes.put(k, slopes.get(k) + 1);
